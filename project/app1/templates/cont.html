@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body id="bg">
+<h1 class="p-3 text-center">Contact Us</h1>
+<div class="row p-5">
+<div class="vc col-md-6">
+    <div class="ia-heading">
+    </div>
+<form action="/insertcont/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+
+<div class="form-group" id="Name">
+    <label for="name">Name</label>
+    <input type="text" required class="form-control" name="name" placeholder="Enter Name" id="name" />
+</div>
+
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" placeholder="Enter your Email" id="name" />
+</div>
+
+<div class="form-group">
+<label for="phone">Phone</label>
+<input type="tel" class="form-control" name="phone" placeholder="Enter Phone No" id="name" />
+</div>
+
+<div class="form-group">
+    <label for="message">Message</label>
+<textarea class="form-control" name="message" placeholder="Enter your Message" id="name" cols="40" rows="10">
+</textarea>
+</div>
+
+<div class="form-group">
+<input type="checkbox" />
+<label for="name"> I accept the terms and conditions</label>
+</div>
+
+<div class="p-3 form-group">
+<input type="submit" class="btn"/>
+{% comment %} <button class="btn"> Submit</button> {% endcomment %}
+</div>
+</form>
+</div>
+
+<div class="vc col-md-6">
+{% comment %} <h1>Get Any Kind of Information :</h1> {% endcomment %}
+<img src ="{% static 'img/s3.jpg'%}" height="640" width="95%" />
+</div>
+</div>
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+
+<body>
+
+<img src="{% static 'img/1.jpg' %}" height="450px" width="100%" id="i1" />
+</body>
+<script>
+var arr=['2.jpg','3.jpg','4.jpg','5.jpg','1.jpg'];
+var i=0;
+
+var s=setInterval(f,1000);
+function f()
+{
+document.getElementById('i1').src='/static/img/'+arr[i];
+i++;
+if(i==arr.length)
+{
+i=0;
+}
+}
+
+</script>
+</html>

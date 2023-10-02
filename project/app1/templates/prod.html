@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row p-3 text-center text-left" id="navv">
+
+{% for product in object_list %}
+<div class="col-md-2 text-center p-2" >
+<img src="/media/{{ product.pic }}" height="240px" width="170px" />
+<h5>{{ product.name }}</h5>
+<p id="description_{{ product.id }}" style="display: none;">{{ product.description }}</p>
+<div class="button-wrapper">
+  <span class="description-button" onclick="openPopup('{{ product.pic }}', '{{ product.name }}', '{{ product.description }}')">Description</span>
+</div>
+<h5>Rs. {{ product.price }}</h5>
+<a href="/form/"><button class="btn">Buy</button></a>
+</div>
+{% endfor %}
+
+</div>
+
+<script>
+function openPopup(pic, name, description) {
+  var popupWindow = window.open("", "popupWindow", "width=400, height=400");
+  popupWindow.document.write("<html><head><title>Description</title></head><body>");
+  popupWindow.document.write("<div class='popup'>");
+  popupWindow.document.write("<h3>Description</h3>")
+  popupWindow.document.write("<img src='/media/" + pic + "' alt='Product Image' height='240px' width='170px'>");
+  popupWindow.document.write("<h2>" + name + "</h2>");
+  popupWindow.document.write("<p>" + description + "</p>");
+  popupWindow.document.write("<button onclick='window.close()'>Close</button>");
+  popupWindow.document.write("</div>");
+  popupWindow.document.write("</body></html>");
+}
+</script>
+
+{% endblock %}

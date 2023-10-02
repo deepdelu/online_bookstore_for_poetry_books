@@ -1,0 +1,21 @@
+<html>
+
+<body>
+<h3 id="time"></h3>
+</body>
+<script>
+var t=10;
+var s=setInterval(f,500);
+function f()
+{
+document.getElementById('time').innerHTML=t;
+if(t==0)
+{
+clearInterval(s);
+alert('time is over');
+}
+t--;
+}
+
+</script>
+</html>
