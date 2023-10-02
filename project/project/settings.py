@@ -25,7 +25,7 @@ SECRET_KEY = '9(ei0zp=x!ogu2h9j3wk7n5rb((dsibv!!0s_r(yq88zzq78(e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
